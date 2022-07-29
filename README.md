@@ -2,3 +2,20 @@
 ![npm (scoped)](https://img.shields.io/npm/v/@hetarth02/js-array-helpers?style=for-the-badge)
 
 Array Helper functions for your quick use.
+
+# Installation
+
+```cd
+npm i @hetarth02/js-array-helpers
+```
+
+# How to use
+
+In your `package.json` add the following, `"type": "module"`.
+
+```js
+import { is_array } from "@hetarth02/js-array-helpers";
+
+let arr = [1, 2];
+console.log(is_array(arr)); // true
+```
