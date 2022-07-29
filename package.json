@@ -4,12 +4,6 @@
     "description": "Array Helper functions.",
     "type": "module",
     "main": "index.js",
-    "exports": {
-        ".": {
-            "require": "./dist/helpers.js",
-            "default": "./dist/helpers.module.js"
-        }
-    },
     "license": "MIT",
     "author": {
         "name": "Hetarth Shah",
