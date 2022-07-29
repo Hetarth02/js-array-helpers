@@ -1,2 +1,2 @@
 # js-array-helpers
-Array Helper function for your quick use.
+Array Helper functions for your quick use.
