@@ -1,6 +1,6 @@
 {
     "name": "@hetarth02/js-array-helpers",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "Array Helper functions.",
     "type": "module",
     "main": "index.js",
