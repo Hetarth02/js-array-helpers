@@ -14,8 +14,17 @@ npm i @hetarth02/js-array-helpers
 In your `package.json` add the following, `"type": "module"`.
 
 ```js
-import { is_array } from "@hetarth02/js-array-helpers";
+import { is_array, object_to_array } from "@hetarth02/js-array-helpers";
 
 let arr = [1, 2];
 console.log(is_array(arr)); // true
+
+ const objectX = {
+     0:"Apple",
+     1:"Microsoft",
+     2:"Google"
+ }
+ 
+ console.log(object_to_array(objectX)) // [ 'Apple', 'Microsoft', 'Google' ]
+
 ```
