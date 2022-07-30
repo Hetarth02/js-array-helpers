@@ -65,4 +65,11 @@ function array_frequency(arr) {
     return freq_obj;
 }
 
-export { is_array, head, tail, in_array, array_filter, array_chunk, array_frequency };
+function object_to_array(obj){
+    let temp=[]
+    const entries = Object.entries(obj)
+    entries.forEach(ent => temp.push(ent[1]))   
+    return temp;
+}
+
+export { is_array, head, tail, in_array, array_filter, array_chunk, array_frequency,object_to_array };
