@@ -46,7 +46,7 @@ function array_chunk(arr, chunk_size) {
 
 function array_filter(arr) {
     is_array(arr);
-    arr = arr.filter(function (e) {
+    arr = arr.filter((e) => {
         return e === 0 || e;
     });
     return arr;
@@ -65,11 +65,20 @@ function array_frequency(arr) {
     return freq_obj;
 }
 
-function object_to_array(obj){
-    let temp=[]
-    const entries = Object.entries(obj)
-    entries.forEach(ent => temp.push(ent[1]))   
+function object_to_array(obj) {
+    let temp = [];
+    const entries = Object.entries(obj);
+    entries.forEach((ent) => temp.push(ent[1]));
     return temp;
 }
 
-export { is_array, head, tail, in_array, array_filter, array_chunk, array_frequency,object_to_array };
+export {
+    head,
+    tail,
+    is_array,
+    in_array,
+    array_chunk,
+    array_filter,
+    array_frequency,
+    object_to_array,
+};

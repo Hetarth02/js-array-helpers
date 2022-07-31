@@ -3,6 +3,7 @@
     "version": "2.2.1",
     "description": "Array Helper functions.",
     "main": "index.js",
+    "type": "module",
     "scripts": {
         "test": "exit 0"
     },
