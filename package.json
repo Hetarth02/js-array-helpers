@@ -2,25 +2,27 @@
     "name": "@hetarth02/js-array-helpers",
     "version": "2.1.0",
     "description": "Array Helper functions.",
-    "type": "module",
     "main": "index.js",
-    "license": "MIT",
-    "author": {
-        "name": "Hetarth Shah",
-        "url": "https://hetarth.tech/"
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "homepage": "https://github.com/Hetarth02/js-array-helpers#README",
     "repository": {
         "type": "git",
-        "url": "https://github.com/hetarth02/js-array-helpers.git"
-    },
-    "bugs": {
-        "url": "https://github.com/hetarth02/js-array-helpers/issues"
+        "url": "https://github.com/Hetarth02/js-array-helpers.git"
     },
     "keywords": [
         "array helpers",
         "js array helpers",
         "package",
         "helpers"
-    ]
+    ],
+    "author": {
+        "name": "Hetarth Shah",
+        "url": "https://hetarth.tech/"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Hetarth02/js-array-helpers/issues"
+    },
+    "homepage": "https://github.com/Hetarth02/js-array-helpers#readme"
 }
