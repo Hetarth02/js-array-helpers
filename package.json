@@ -16,6 +16,9 @@
         "package",
         "helpers"
     ],
+    "publishConfig": {
+        "@Hetarth02:registry": "https://npm.pkg.github.com"
+    },
     "author": {
         "name": "Hetarth Shah",
         "url": "https://hetarth.tech/"
