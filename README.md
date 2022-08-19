@@ -34,6 +34,6 @@ console.log(object_to_array(objectX)) // [ 'Apple', 'Microsoft', 'Google' ]
  
 const fruits = [ 'apple','mango','banana']
 
-console.log( search_in_array( "app" , fruits ) );
+console.log( search_in_array( "app" , fruits ) ); // ['apple']
 
 ```
