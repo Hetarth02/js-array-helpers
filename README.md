@@ -14,7 +14,7 @@ npm i @hetarth02/js-array-helpers
 In your `package.json` add the following, `"type": "module"`.
 
 ```js
-import { is_array, object_to_array } from "@hetarth02/js-array-helpers";
+import { is_array, object_to_array,search_in_array } from "@hetarth02/js-array-helpers";
 
 let arr = [1, 2];
 console.log(is_array(arr)); // true
@@ -26,5 +26,14 @@ console.log(is_array(arr)); // true
  }
  
  console.log(object_to_array(objectX)) // [ 'Apple', 'Microsoft', 'Google' ]
+ 
+ 
+const fruits = [ 'apple','mango','banana']
+
+function search_in_array(query,array) {
+    return array.filter(item => item.search(query) !== -1)
+}
+
+console.log( search_in_array( "app" , fruits ) );
 
 ```
