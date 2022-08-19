@@ -72,4 +72,9 @@ function object_to_array(obj){
     return temp;
 }
 
-export { is_array, head, tail, in_array, array_filter, array_chunk, array_frequency,object_to_array };
+
+function search_in_array(query,array) {
+    return array.filter(item => item.search(query) !== -1)
+}
+
+export { is_array, head, tail, in_array, array_filter, array_chunk, array_frequency,object_to_array,search_in_array };
