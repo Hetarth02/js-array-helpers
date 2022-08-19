@@ -19,13 +19,15 @@ import { is_array, object_to_array,search_in_array } from "@hetarth02/js-array-h
 let arr = [1, 2];
 console.log(is_array(arr)); // true
 
+
+
  const objectX = {
      0:"Apple",
      1:"Microsoft",
      2:"Google"
  }
  
- console.log(object_to_array(objectX)) // [ 'Apple', 'Microsoft', 'Google' ]
+console.log(object_to_array(objectX)) // [ 'Apple', 'Microsoft', 'Google' ]
  
  
  
