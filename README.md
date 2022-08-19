@@ -28,11 +28,9 @@ console.log(is_array(arr)); // true
  console.log(object_to_array(objectX)) // [ 'Apple', 'Microsoft', 'Google' ]
  
  
+ 
+ 
 const fruits = [ 'apple','mango','banana']
-
-function search_in_array(query,array) {
-    return array.filter(item => item.search(query) !== -1)
-}
 
 console.log( search_in_array( "app" , fruits ) );
 
