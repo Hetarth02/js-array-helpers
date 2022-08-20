@@ -50,7 +50,7 @@ function array_chunk(arr, chunk_size) {
     }
 }
 
-//To filter out arrays based on datatypes
+//To filter out arrays based on datatypes.
 function array_filter(arr) {
     is_array(arr);
     arr = arr.filter((e) => {
@@ -73,12 +73,22 @@ function array_frequency(arr) {
     return freq_obj;
 }
 
-//To convert Objects into Arrays
+//To convert Objects into Arrays.
 function object_to_array(obj) {
     let temp = [];
     const entries = Object.entries(obj);
     entries.forEach((ent) => temp.push(ent[1]));
     return temp;
+}
+
+//To get indexes of all occurences of an element inside an array.
+function get_all_indexes(arr, val) {
+    is_array(arr);
+    var indexes = [], i;
+    for(i = 0; i < arr.length; i++)
+        if (arr[i] === val)
+            indexes.push(i);
+    return indexes;
 }
 
 export {
@@ -90,4 +100,5 @@ export {
     array_filter,
     array_frequency,
     object_to_array,
+    get_all_indexes,
 };
