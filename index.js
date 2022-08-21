@@ -85,9 +85,11 @@ function object_to_array(obj) {
 function get_all_indexes(arr, val) {
     is_array(arr);
     var indexes = [];
-    for(let i = 0; i < arr.length; i++)
-        if (arr[i] === val)
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === val) {
             indexes.push(i);
+        }
+    }
     return indexes;
 }
 
