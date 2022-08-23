@@ -94,7 +94,7 @@ function get_all_indexes(arr, val) {
 }
 
 function search_in_array(query,array) {
-    return array.filter(item => item.search(query) !== -1)
+    return array.filter(item => item.toLowerCase().search(query.toLowerCase()) !== -1)
 }
 
 export {
