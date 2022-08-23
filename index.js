@@ -93,6 +93,10 @@ function get_all_indexes(arr, val) {
     return indexes;
 }
 
+function search_in_array(query,array) {
+    return array.filter(item => item.search(query) !== -1)
+}
+
 export {
     head,
     tail,
@@ -103,4 +107,5 @@ export {
     array_frequency,
     object_to_array,
     get_all_indexes,
+    search_in_array,
 };
