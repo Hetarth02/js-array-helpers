@@ -123,6 +123,15 @@ class Helper {
             throw new TypeError("Input parameters not valid!");
         }
     }
+    //To sort numeric arrays ascending and descending
+    static sort_nums(arr, reverse = false) {
+        this.is_array(arr);
+        if (reverse) {
+            return arr.sort(function(a, b){return b - a});
+        } else {
+            return arr.sort(function(a, b){return a - b});
+        }      
+}
 }
 
 export default Helper;
