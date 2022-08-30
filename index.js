@@ -9,6 +9,16 @@ class Helper {
         return Array.isArray(arr) ? true : this._throw();
     }
 
+    // To check if arr has only nums.
+    static is_num_array(arr) {
+        var a = arr.reduce(function(result, val) {
+            return result && typeof val === 'number';
+            }, true);
+        if (a == false) {
+            throw new TypeError("Must be an array of numbers!")
+        } 
+    }
+
     // To get the head or first element of the array.
     static head(arr) {
         this.is_array(arr);
@@ -126,12 +136,13 @@ class Helper {
     //To sort numeric arrays ascending and descending
     static sort_nums(arr, reverse = false) {
         this.is_array(arr);
+        this.is_num_array(arr);
         if (reverse) {
             return arr.sort(function(a, b){return b - a});
         } else {
             return arr.sort(function(a, b){return a - b});
         }      
-}
+    }
 }
 
 export default Helper;
