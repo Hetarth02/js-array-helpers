@@ -198,7 +198,7 @@ function flatten(arr) {
 }
 
 /**
- * Gets the intersection betwene two arrays (i.e. the elements that are present in both arrays).
+ * Gets the intersection between two arrays (i.e. the elements that are present in both arrays).
  *
  * @param array arr1
  * @param array arr2
