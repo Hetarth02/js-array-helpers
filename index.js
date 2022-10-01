@@ -163,6 +163,14 @@ function sort_nums(arr, reverse = false) {
     }
 }
 
+/**
+ * Deep copy of array
+ *
+ * @param array arr
+ * @returns array
+ */
+const array_copy = (arr) => arr.map(item => Array.isArray(item) ? array_copy(item) : item);
+
 export {
     is_array,
     is_num_array,
@@ -178,4 +186,5 @@ export {
     array_sum,
     array_slice_sum,
     sort_nums,
+    array_copy,
 };
