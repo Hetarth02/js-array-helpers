@@ -20,7 +20,7 @@ In your `package.json` add the following, `"type": "module"`.
 # Example Usage
 
 ```js
-import { is_array, object_to_array, search_in_array } from "@hetarth02/js-array-helpers";
+import { is_array, object_to_array, search_in_array,sanitize_array } from "@hetarth02/js-array-helpers";
 
 let arr = [1, 2];
 console.log(is_array(arr)); // true
@@ -35,4 +35,38 @@ console.log(object_to_array(objectX)); // ['Apple', 'Microsoft', 'Google']
 const mang = ['Microsoft', 'apple', 'netflix', 'Google'];
 const result = search_in_array("app", mang);
 console.log(result); // ['apple']
+
+// Corrupted Data array with diff data types
+const my_array = [
+    {name:'sam',age:null,isEmployed:'false'},    
+    {name:'a',age:456,isEmployed:false},    
+    {name:'c',age:undefined,isEmployed:00}    ,
+    {name:null,age:123,isEmployed:true}    ,
+    {name:'asd',age:123,isEmployed:false}   , 
+    {name:00,age:123,isEmployed:null}    ,
+    {name:'sam',age:'123',isEmployed:undefined}    
+]
+
+// Santized array Example
+
+// Given schema for correct data types
+const my_schema = {
+    "name":'string',
+    "age":'number',
+    "isEmployed":'boolean'
+}
+
+// Run sanitize_array with array and schema
+console.log(sanitize_array(my_array,my_schema))
+
+// Sanitized Output 
+// [    { name: 'sam', age: 0, isEmployed: false },
+//      { name: 'a', age: 456, isEmployed: false },
+//      { name: 'c', age: 0, isEmployed: true },
+//      { name: 'null', age: 123, isEmployed: true },
+//      { name: 'asd', age: 123, isEmployed: false },
+//      { name: '0', age: 123, isEmployed: false },
+//      { name: 'sam', age: 123, isEmployed: false } 
+//  ]
+
 ```
