@@ -15,10 +15,10 @@ In your `package.json` add the following, `"type": "module"`.
 
 ### is_array()
 ```js
-import Helper from "@hetarth02/js-array-helpers";
+import { is_array } from "@hetarth02/js-array-helpers";
 
 let arr = [1, 2];
-console.log(Helper.is_array(arr)); // true
+console.log(is_array(arr)); // true
 ```
 
 ### object_to_array
@@ -29,14 +29,14 @@ const objectX = {
     2: "Google"
 }
  
-console.log(Helper.object_to_array(objectX)) // ['Apple', 'Microsoft', 'Google']
+console.log(object_to_array(objectX)) // ['Apple', 'Microsoft', 'Google']
 ```
 
 ### search_in_array
 ```js
 const mang = ['Microsoft', 'apple', 'netflix', 'Google']
 
-const result = Helper.search_in_array("app", mang);
+const result = search_in_array("app", mang);
 
 console.log(result); // ['apple']
 ```
