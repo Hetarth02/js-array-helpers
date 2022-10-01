@@ -36,6 +36,13 @@ const mang = ['Microsoft', 'apple', 'netflix', 'Google'];
 const result = search_in_array("app", mang);
 console.log(result); // ['apple']
 
+
+
+
+
+
+// Santized array Example
+
 // Corrupted Data array with diff data types
 const my_array = [
     {name:'sam',age:null,isEmployed:'false'},    
@@ -47,7 +54,7 @@ const my_array = [
     {name:'sam',age:'123',isEmployed:undefined}    
 ]
 
-// Santized array Example
+
 
 // Given schema for correct data types
 const my_schema = {
