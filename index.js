@@ -165,18 +165,18 @@ function sort_nums(arr, reverse = false) {
 
 /**
  * To get all the elements of an array with given key and value.
- * More like Where claus in php just for js array
+ * More like Where clause in php just for js array
  *
  *
- * @param array arr 
+ * @param array arr
  * @param string key
  * @param string value
  * @param number value
  * @returns array
  */
-
-function getElementByKeyValue(arr,key,value){
-    return arr.filter(item=>item[key]==value)
+function get_element_by_key_value(arr, key, value) {
+    is_array(arr);
+    return arr.filter((item) => item[key] == value);
 }
 
 export {
@@ -194,5 +194,5 @@ export {
     array_sum,
     array_slice_sum,
     sort_nums,
-    getElementByKeyValue,
+    get_element_by_key_value,
 };
