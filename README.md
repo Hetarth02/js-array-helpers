@@ -45,13 +45,13 @@ console.log(result); // ['apple']
 
 // Corrupted Data array with diff data types
 const my_array = [
-    {name:'sam',age:null,isEmployed:'false'},    
-    {name:'a',age:456,isEmployed:false},    
-    {name:'c',age:undefined,isEmployed:00}    ,
-    {name:null,age:123,isEmployed:true}    ,
-    {name:'asd',age:123,isEmployed:false}   , 
-    {name:00,age:123,isEmployed:null}    ,
-    {name:'sam',age:'123',isEmployed:undefined}    
+    {name:'sam',    age:null,       isEmployed:'false'},    
+    {name:'a',      age:456,        isEmployed:false},    
+    {name:'c',      age:undefined,  isEmployed:00}    ,
+    {name:null,     age:123,        isEmployed:true}    ,
+    {name:'asd',    age:123,        isEmployed:false}   , 
+    {name:00,       age:123,        isEmployed:null}    ,
+    {name:'sam',    age:'123',      isEmployed:undefined}    
 ]
 
 
