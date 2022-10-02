@@ -223,6 +223,60 @@ function difference(arr1, arr2) {
   return arr1.filter((item) => !arr2.includes(item));
 }
 
+/**
+ * To sanitize the array of objects with respect to the given schema
+ *
+ * See exmaple in Readme for better understanding....
+ * 
+ * @param array arr
+ * @param object schema { "keyName":"dataType" }
+ * @return array
+ * 
+ */
+
+function sanitize_array(arr,schema){
+    let all_data_types = [];
+    let all_keys = [];
+
+    const schema_array = Object.entries(schema);
+    schema_array.forEach((type) => all_data_types.push(type[1]));
+    
+    schema_array.forEach((key) => all_keys.push(key[0]));
+    
+    arr.forEach((element)=>{
+        all_keys.forEach((key,key_index)=>{
+             if(`${typeof(element[all_keys[key_index]])}`!==`${all_data_types[key_index]}`){
+                if(all_data_types[key_index]=='number'){
+                    if(!isNaN(parseInt(element[all_keys[key_index]]))){
+                        element[all_keys[key_index]] = parseInt(element[all_keys[key_index]]);
+                    }else{
+                        element[all_keys[key_index]] = 0;
+                    }
+                }else if(all_data_types[key_index]=='string'){
+                    element[all_keys[key_index]] = `${element[all_keys[key_index]]}`;
+                }else if(all_data_types[key_index]=='boolean'){
+                    if( element[all_keys[key_index]]=='true'){
+                        element[all_keys[key_index]] = true;
+                    }else if(element[all_keys[key_index]]=='false'){
+                        element[all_keys[key_index]] = false;
+                    }else if(element[all_keys[key_index]]==null){
+                        element[all_keys[key_index]] = false;
+                    }else{
+                        element[all_keys[key_index]] = true;
+                    }
+                }else{
+                    element[all_keys[key_index]] = null;
+                }
+                 
+             }
+        })
+
+       
+    })
+    
+    return arr
+}
+
 export {
   is_array,
   is_num_array,
@@ -242,4 +296,5 @@ export {
   flatten,
   intersection,
   difference,
+  sanitize_array,
 };
