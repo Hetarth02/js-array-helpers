@@ -36,11 +36,6 @@ const mang = ['Microsoft', 'apple', 'netflix', 'Google'];
 const result = search_in_array("app", mang);
 console.log(result); // ['apple']
 
-
-
-
-
-
 // Santized array Example
 
 // Corrupted Data array with diff data types
@@ -52,19 +47,17 @@ const my_array = [
     {name:'asd',    age:123,        isEmployed:false}   , 
     {name:00,       age:123,        isEmployed:null}    ,
     {name:'sam',    age:'123',      isEmployed:undefined}    
-]
-
-
+];
 
 // Given schema for correct data types
 const my_schema = {
     "name":'string',
     "age":'number',
     "isEmployed":'boolean'
-}
+};
 
 // Run sanitize_array with array and schema
-console.log(sanitize_array(my_array,my_schema))
+console.log(sanitize_array(my_array,my_schema));
 
 // Sanitized Output 
 // [    { name: 'sam', age: 0, isEmployed: false },
@@ -74,6 +67,6 @@ console.log(sanitize_array(my_array,my_schema))
 //      { name: 'asd', age: 123, isEmployed: false },
 //      { name: '0', age: 123, isEmployed: false },
 //      { name: 'sam', age: 123, isEmployed: false } 
-//  ]
+// ]
 
 ```
