@@ -179,6 +179,23 @@ function get_element_by_key_value(arr, key, value) {
     return arr.filter((item) => item[key] == value);
 }
 
+/**
+ * Get only selected keys of array
+ * Like select query
+ *
+ * @param array arr
+ * @param array keys
+ * @returns array
+ */
+function get_only(arr, keys) {
+    is_array(arr);
+    is_array(keys);
+    return arr.map((a) => keys.reduce((b, key) => {
+        b[key] = a[key];
+        return b;
+    }, {}))
+}
+
 export {
     is_array,
     is_num_array,
@@ -195,4 +212,5 @@ export {
     array_slice_sum,
     sort_nums,
     get_element_by_key_value,
+    get_only,
 };
