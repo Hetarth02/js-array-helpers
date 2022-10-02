@@ -277,6 +277,23 @@ function sanitize_array(arr,schema){
     return arr
 }
 
+/**
+ * Get only selected keys of array
+ * Like select query
+ *
+ * @param array arr
+ * @param array keys
+ * @returns array
+ */
+function get_only(arr, keys) {
+    is_array(arr);
+    is_array(keys);
+    return arr.map((a) => keys.reduce((b, key) => {
+        b[key] = a[key];
+        return b;
+    }, {}))
+}
+
 export {
   is_array,
   is_num_array,
@@ -297,4 +314,5 @@ export {
   intersection,
   difference,
   sanitize_array,
+  get_only,
 };
