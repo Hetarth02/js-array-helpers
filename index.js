@@ -17,7 +17,12 @@ function is_array(arr) {
   return Array.isArray(arr) ? true : _throw();
 }
 
-// To check if arr has only nums.
+/**
+ * To check if array of numbers.
+ *
+ * @param array arr
+ * @returns bool | TypeError
+ */
 function is_num_array(arr) {
   var a = arr.reduce(function (result, val) {
     return result && typeof val === "number";
@@ -27,13 +32,23 @@ function is_num_array(arr) {
   }
 }
 
-// To get the head or first element of the array.
+/**
+ * To get the head or first element of the array.
+ *
+ * @param array arr
+ * @returns any
+ */
 function head(arr) {
   is_array(arr);
   return arr[0];
 }
 
-// To get the tail last element of the array.
+/**
+ * To get the tail last element of the array.
+ *
+ * @param array arr
+ * @returns any
+ */
 function tail(arr) {
   is_array(arr);
   let element = arr.pop();
@@ -41,13 +56,25 @@ function tail(arr) {
   return element;
 }
 
-// To check the existence of an element inside the array.
+/**
+ * To check the existence of an element inside the array.
+ *
+ * @param array arr
+ * @param any value
+ * @returns any
+ */
 function in_array(arr, value) {
   is_array(arr);
   return arr.includes(value);
 }
 
-// To split arrays into fixed size chunks.
+/**
+ * To split arrays into fixed size chunks.
+ *
+ * @param array arr
+ * @param number chunk_size
+ * @returns any
+ */
 function array_chunk(arr, chunk_size) {
   is_array(arr);
   if (typeof chunk_size != "number") {
@@ -69,7 +96,12 @@ function array_chunk(arr, chunk_size) {
   }
 }
 
-// To filter out arrays by removing nullish values.
+/**
+ * To filter out arrays by removing nullish values.
+ *
+ * @param array arr
+ * @returns array
+ */
 function array_filter(arr) {
   is_array(arr);
   arr = arr.filter((e) => {
@@ -78,7 +110,12 @@ function array_filter(arr) {
   return arr;
 }
 
-// To get the frequency of occurence of each unique element inside the array.
+/**
+ * To get the frequency of occurence of each unique element inside the array.
+ *
+ * @param array arr
+ * @returns array
+ */
 function array_frequency(arr) {
   is_array(arr);
   let freq_obj = {};
@@ -92,7 +129,12 @@ function array_frequency(arr) {
   return freq_obj;
 }
 
-// To convert Objects into Arrays.
+/**
+ * To convert Objects into Arrays.
+ *
+ * @param object obj
+ * @returns array
+ */
 function object_to_array(obj) {
   let temp = [];
   const entries = Object.entries(obj);
@@ -100,7 +142,13 @@ function object_to_array(obj) {
   return temp;
 }
 
-// To get indexes of all occurences of an element inside an array.
+/**
+ * To get indexes of all occurences of an element inside an array.
+ *
+ * @param array arr
+ * @param any val
+ * @returns array
+ */
 function get_all_indexes(arr, val) {
   is_array(arr);
   var indexes = [];
@@ -112,7 +160,13 @@ function get_all_indexes(arr, val) {
   return indexes;
 }
 
-// To check if a substr exists within an array of strings
+/**
+ * To check if a substr exists within an array of strings
+ *
+ * @param string query
+ * @param array arr
+ * @returns array
+ */
 function search_in_array(query, arr) {
   is_array(arr);
   return arr.filter(
@@ -120,13 +174,26 @@ function search_in_array(query, arr) {
   );
 }
 
-// Get sum of array
+/**
+ * Get sum of array
+ *
+ * @param array arr
+ * @returns number
+ */
 function array_sum(arr) {
   is_array(arr);
   return arr.reduce((prev, curr) => (isNaN(curr) ? 0 : prev + curr), 0);
 }
 
-// Get sum of a subarray
+/**
+ *  Get sum of a subarray
+ *
+ * @param array arr
+ * @param number slice_start
+ * @param number slice_end
+ * @param bool includes
+ * @returns number | TypeError
+ */
 function array_slice_sum(
   arr,
   slice_start = 0,
