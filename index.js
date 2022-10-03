@@ -282,6 +282,25 @@ function find_key_and_update(arr,parent_key,parent_value,target_key,target_value
     return arr
 }
 
+/**
+ * Get only selected keys of array
+ * Like select query
+ *
+ * @param array arr
+ * @param array keys
+ * @returns array
+ */
+function get_only(arr, keys) {
+    is_array(arr);
+    is_array(keys);
+    return arr.map((a) =>
+        keys.reduce((b, key) => {
+            b[key] = a[key];
+            return b;
+        }, {})
+    );
+}
+
 
 export {
     is_array,
@@ -301,5 +320,6 @@ export {
     get_element_by_key_value,
     sanitize_array,
     find_and_update,
-    find_key_and_update
+    find_key_and_update,
+    get_only,
 };
