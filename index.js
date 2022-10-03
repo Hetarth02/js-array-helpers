@@ -233,6 +233,56 @@ function sanitize_array(arr,schema){
     return arr
 }
 
+/**
+ * To find and upadate a key value in an array of objects
+ *
+ * @param array arr
+ * @param string key (key to be updated)
+ * @param string value (old value of the key )
+ * @param string newValue (new value of the key)
+ * @returns arr
+ */
+
+function find_and_update(arr,key,value,new_value){
+    arr.forEach(element=>{
+        if(element[key]==value){
+             element[key] = new_value
+        }
+    })
+    return arr
+}
+
+
+/**
+ * To find and update a key value in an array of 
+ * objects with respect to a parent key value.
+ *
+ * @param array arr
+ * @param string parentKey (parent key to select the object)
+ * @param string parentValue (parent value to select the object)
+ * @param string targetKey (key to be updated)
+ * @param string targetValue (old value of the key to select only desired object) 
+ * @param string targetValue | "*" to update all the targetKey 
+ * @param string newValue (new value of the key)
+ * @returns arr
+ */
+
+
+function find_key_and_update(arr,parent_key,parent_value,target_key,target_value,new_value){
+    arr.forEach(element=>{
+        if(element[parent_key]==parent_value){
+            if(target_value == "*"){
+                element[target_key] = new_value
+            }
+            else if( element[target_key] == target_value){
+                element[target_key] = new_value
+            }
+        }
+    })
+    return arr
+}
+
+
 export {
     is_array,
     is_num_array,
@@ -250,4 +300,6 @@ export {
     sort_nums,
     get_element_by_key_value,
     sanitize_array,
+    find_and_update,
+    find_key_and_update
 };
