@@ -77,7 +77,7 @@ console.log(sanitize_array(my_array, my_schema));
 
 // to reverse an array in parts
 let my_array = [1, 2, 3, 4, 5];
-let reverseInPart_array = array_rotate(my_array, 3, 4);
+let reverseInPart_array = array_reverse_part(my_array, 3, 4);
 
 console.log(reverseInPart_array);
 
