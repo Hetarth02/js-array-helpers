@@ -353,6 +353,18 @@ function get_only(arr, keys) {
     );
 }
 
+/**
+ * To get RMS (Root Mean Square) Value.
+ *
+ * @param array arr
+ * @returns number
+ */
+ function get_rms_value(arr) {
+    is_array(arr);
+    let sum_square = arr.reduce((ss, curr) => (isNaN(curr) ? 0 : ss + curr*curr), 0);
+    return Math.sqrt(sum_square/arr.length);
+  }
+
 export {
     is_array,
     is_num_array,
@@ -374,4 +386,5 @@ export {
     difference,
     sanitize_array,
     get_only,
+    get_rms_value,
 };
