@@ -353,6 +353,44 @@ function get_only(arr, keys) {
     );
 }
 
+
+/**
+ *  Get the equilibrium point of an array which means the array element position where the
+ * sum of elements on left side and sum of element on right side of that element in array are same.
+ * 
+ *
+ * @param array a
+ * @param number n
+ * @returns number 
+ */
+
+ function equilibrium_Point(a, n){
+    is_array(a);
+   let i=0;
+   let j=n-1;
+   let s1=0;
+   let s2=0;
+   while(i<j){
+       if(s1<=s2){
+           s1=s1+a[i];
+           i++;
+       }
+       else{
+           s2=s2+a[j];
+           j--;
+       }
+   }
+
+   if(s1==s2){
+       return i+1;
+   }
+   else{
+       return -1;
+   }
+
+}
+
+
 export {
     is_array,
     is_num_array,
@@ -374,4 +412,5 @@ export {
     difference,
     sanitize_array,
     get_only,
+    equilibrium_Point,
 };

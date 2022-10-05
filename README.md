@@ -69,4 +69,9 @@ console.log(sanitize_array(my_array,my_schema));
 //      { name: 'sam', age: 123, isEmployed: false } 
 // ]
 
+
+//equilibrium_point program file execution 
+// Array = [1,3,5,2,2]
+//n=5
+//output = 3
 ```
