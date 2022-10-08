@@ -26,6 +26,7 @@ import {
 	object_to_array,
 	search_in_array,
 	sanitize_array,
+  get_rms_value,
 } from "@hetarth02/js-array-helpers";
 
 let arr = [1, 2];
@@ -74,6 +75,17 @@ console.log(sanitize_array(my_array, my_schema));
 //      { name: '0', age: 123, isEmployed: false },
 //      { name: 'sam', age: 123, isEmployed: false }
 // ]
+
+// get_rms_value example
+
+// Given array of numbers
+const values = [23, 54, 19];
+
+// Run get_rms_value with array
+console.log(get_rms_value(values))
+
+// Calculated Root Mean Square value
+// 35.61834733205159
 
 // to reverse an array in parts
 let my_array = [1, 2, 3, 4, 5];

@@ -395,6 +395,18 @@ function array_reverse_part(arr, start, end) {
 }
 
 /**
+ * To get RMS (Root Mean Square) Value.
+ *
+ * @param array arr
+ * @returns number
+ */
+ function get_rms_value(arr) {
+    is_array(arr);
+    let sum_square = arr.reduce((ss, curr) => (isNaN(curr) ? 0 : ss + curr*curr), 0);
+    return Math.sqrt(sum_square/arr.length);
+  }
+
+ /**
  *  To rotate an array to the left counter-clockwise by x steps, where x is non-negative
  *
  * @param array arr
@@ -478,4 +490,5 @@ export {
 	array_reverse_part,
 	array_rotate,
     equilibrium_Point,
+    get_rms_value,
 };
