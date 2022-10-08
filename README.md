@@ -26,7 +26,7 @@ import {
 	object_to_array,
 	search_in_array,
 	sanitize_array,
-  get_rms_value,
+  	get_rms_value,
 } from "@hetarth02/js-array-helpers";
 
 let arr = [1, 2];
@@ -67,7 +67,8 @@ const my_schema = {
 console.log(sanitize_array(my_array, my_schema));
 
 // Sanitized Output
-// [    { name: 'sam', age: 0, isEmployed: false },
+// [
+//		{ name: 'sam', age: 0, isEmployed: false },
 //      { name: 'a', age: 456, isEmployed: false },
 //      { name: 'c', age: 0, isEmployed: true },
 //      { name: 'null', age: 123, isEmployed: true },
@@ -77,36 +78,18 @@ console.log(sanitize_array(my_array, my_schema));
 // ]
 
 // get_rms_value example
-
-// Given array of numbers
 const values = [23, 54, 19];
+console.log(get_rms_value(values)); // 35.61834733205159
 
-// Run get_rms_value with array
-console.log(get_rms_value(values))
-
-// Calculated Root Mean Square value
-// 35.61834733205159
-
-// to reverse an array in parts
+// To reverse an array in parts
 let my_array = [1, 2, 3, 4, 5];
 let reverseInPart_array = array_reverse_part(my_array, 3, 4);
 
-console.log(reverseInPart_array);
+console.log(reverseInPart_array); // [1, 2, 3, 5, 4]
 
-// output
-//rotated_array=[1,2,3,5,4];
-
-// to rotate array counter clockwise
+// To rotate array counter clockwise
 let my_array1 = [1, 2, 3, 4, 5];
 let rotated_array = array_rotate(my_array1, 3);
 
-console.log(rotated_array);
-
-// output
-//rotated_array=[4,5,1,2,3];
-
-//equilibrium_point program file execution 
-// Array = [1,3,5,2,2]
-//n=5
-//output = 3
+console.log(rotated_array); // [4, 5, 1, 2, 3]
 ```
