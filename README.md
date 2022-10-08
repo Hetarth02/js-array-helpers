@@ -92,4 +92,9 @@ console.log(rotated_array);
 
 // output
 //rotated_array=[4,5,1,2,3];
+
+//equilibrium_point program file execution 
+// Array = [1,3,5,2,2]
+//n=5
+//output = 3
 ```
