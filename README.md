@@ -1,4 +1,5 @@
 # js-array-helpers
+
 ![npm (scoped)](https://img.shields.io/npm/v/@hetarth02/js-array-helpers?style=for-the-badge)
 
 Array Helper functions for your quick use.
@@ -11,7 +12,7 @@ npm i @hetarth02/js-array-helpers
 
 # Contributing
 
-- To conttribute please refer [CONTRIBUTING.md](CONTRIBUTING.md).
+-   To conttribute please refer [CONTRIBUTING.md](CONTRIBUTING.md).
 
 # How to use
 
@@ -20,19 +21,25 @@ In your `package.json` add the following, `"type": "module"`.
 # Example Usage
 
 ```js
-import { is_array, object_to_array, search_in_array,sanitize_array } from "@hetarth02/js-array-helpers";
+import {
+	is_array,
+	object_to_array,
+	search_in_array,
+	sanitize_array,
+  get_rms_value,
+} from "@hetarth02/js-array-helpers";
 
 let arr = [1, 2];
 console.log(is_array(arr)); // true
 
 const objectX = {
-    0: "Apple",
-    1: "Microsoft",
-    2: "Google"
-}; 
+	0: "Apple",
+	1: "Microsoft",
+	2: "Google",
+};
 console.log(object_to_array(objectX)); // ['Apple', 'Microsoft', 'Google']
 
-const mang = ['Microsoft', 'apple', 'netflix', 'Google'];
+const mang = ["Microsoft", "apple", "netflix", "Google"];
 const result = search_in_array("app", mang);
 console.log(result); // ['apple']
 
@@ -40,33 +47,66 @@ console.log(result); // ['apple']
 
 // Corrupted Data array with diff data types
 const my_array = [
-    {name:'sam',    age:null,       isEmployed:'false'},    
-    {name:'a',      age:456,        isEmployed:false},    
-    {name:'c',      age:undefined,  isEmployed:00}    ,
-    {name:null,     age:123,        isEmployed:true}    ,
-    {name:'asd',    age:123,        isEmployed:false}   , 
-    {name:00,       age:123,        isEmployed:null}    ,
-    {name:'sam',    age:'123',      isEmployed:undefined}    
+	{ name: "sam", age: null, isEmployed: "false" },
+	{ name: "a", age: 456, isEmployed: false },
+	{ name: "c", age: undefined, isEmployed: 00 },
+	{ name: null, age: 123, isEmployed: true },
+	{ name: "asd", age: 123, isEmployed: false },
+	{ name: 00, age: 123, isEmployed: null },
+	{ name: "sam", age: "123", isEmployed: undefined },
 ];
 
 // Given schema for correct data types
 const my_schema = {
-    "name":'string',
-    "age":'number',
-    "isEmployed":'boolean'
+	name: "string",
+	age: "number",
+	isEmployed: "boolean",
 };
 
 // Run sanitize_array with array and schema
-console.log(sanitize_array(my_array,my_schema));
+console.log(sanitize_array(my_array, my_schema));
 
-// Sanitized Output 
+// Sanitized Output
 // [    { name: 'sam', age: 0, isEmployed: false },
 //      { name: 'a', age: 456, isEmployed: false },
 //      { name: 'c', age: 0, isEmployed: true },
 //      { name: 'null', age: 123, isEmployed: true },
 //      { name: 'asd', age: 123, isEmployed: false },
 //      { name: '0', age: 123, isEmployed: false },
-//      { name: 'sam', age: 123, isEmployed: false } 
+//      { name: 'sam', age: 123, isEmployed: false }
 // ]
 
+// get_rms_value example
+
+// Given array of numbers
+const values = [23, 54, 19];
+
+// Run get_rms_value with array
+console.log(get_rms_value(values))
+
+// Calculated Root Mean Square value
+// 35.61834733205159
+
+// to reverse an array in parts
+let my_array = [1, 2, 3, 4, 5];
+let reverseInPart_array = array_reverse_part(my_array, 3, 4);
+
+console.log(reverseInPart_array);
+
+// output
+//rotated_array=[1,2,3,5,4];
+
+// to rotate array counter clockwise
+let my_array1 = [1, 2, 3, 4, 5];
+let rotated_array = array_rotate(my_array1, 3);
+
+console.log(rotated_array);
+
+// output
+//rotated_array=[4,5,1,2,3];
+
+//equilibrium_point program file execution 
+// Array = [1,3,5,2,2]
+//n=5
+//output = 3
 ```
