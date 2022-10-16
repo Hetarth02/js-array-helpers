@@ -485,6 +485,46 @@ function find_key_and_update(arr, parent_key, parent_value, target_key, target_v
     return arr;
 }
 
+/**
+ * Group by key will group data by given key
+ *
+ * e.g i/p [
+ *              {type: 'Movie', value: 'M1'},
+ *              {type: 'TV show', value: 'TS1'},
+ *              {type: 'Movie', value: 'M2'},
+ *              {type: 'TV show', value: 'TS2'},
+ *          ]
+ * o/p
+ *
+ *          {
+ *              Movie: [
+ *                           {type: 'Movie', value: 'M1'},
+ *                           {type: 'Movie', value: 'M1'},
+ *                      ],
+ *              'TV show': [
+ *                            {type: 'TV show', value: 'TS1'},
+ *                            {type: 'TV show', value: 'TS2'},
+ *              ]
+ *          }
+ * @param {array of obejcts} input_arr
+ * @param {string} key
+ */
+ function group_by_key(input_arr, key) {
+    let result = {};
+
+    result = input_arr.reduce((obj, item) => {
+        // if key already present in obj and push the new item
+        if (obj[item[key]]) {
+            obj[item[key]].push(item)
+        } else {
+            // if we don't find a key inside an obj, Then add key into object with value as an array
+            obj[item[key]] = [item]
+        }
+        return obj;
+    }, {})
+    return result;
+}
+
 export {
     is_array,
     is_num_array,
@@ -512,4 +552,5 @@ export {
     get_rms_value,
     find_key_and_update,
     find_and_update,
+    group_by_key,
 };
