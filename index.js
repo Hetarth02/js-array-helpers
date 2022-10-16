@@ -485,6 +485,18 @@ function find_key_and_update(arr, parent_key, parent_value, target_key, target_v
     return arr;
 }
 
+/**
+ * For in range loop like python
+ * 
+ * @param integer num 
+ * @param function callback 
+ */
+function for_in_range(num, callback) {
+    for (let i = 0; i < num; i++) {
+        callback(i)
+    }
+}
+
 export {
     is_array,
     is_num_array,
@@ -512,4 +524,5 @@ export {
     get_rms_value,
     find_key_and_update,
     find_and_update,
+    for_in_range,
 };
