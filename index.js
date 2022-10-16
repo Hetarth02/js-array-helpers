@@ -487,25 +487,25 @@ function find_key_and_update(arr, parent_key, parent_value, target_key, target_v
 
 /**
  * For in range loop like python
- * 
- * @param integer num 
- * @param function callback 
+ *
+ * @param integer num
+ * @param function callback
  */
 function for_in_range(num, callback) {
     for (let i = 0; i < num; i++) {
-        callback(i)
+        callback(i);
     }
 }
 
 /**
  * Group by key in array of object
- * 
+ *
  * @param array arr
  * @param string key
  * @returns object
  */
 function group_by(arr, key) {
-    is_array(arr)
+    is_array(arr);
     return arr.reduce(function (rv, x) {
         (rv[x[key]] = rv[x[key]] || []).push(x);
         return rv;
