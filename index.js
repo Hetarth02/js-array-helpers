@@ -497,6 +497,21 @@ function for_in_range(num, callback) {
     }
 }
 
+/**
+ * Group by key in array of object
+ * 
+ * @param array arr
+ * @param string key
+ * @returns object
+ */
+function group_by(arr, key) {
+    is_array(arr)
+    return arr.reduce(function (rv, x) {
+        (rv[x[key]] = rv[x[key]] || []).push(x);
+        return rv;
+    }, {});
+}
+
 export {
     is_array,
     is_num_array,
@@ -525,4 +540,5 @@ export {
     find_key_and_update,
     find_and_update,
     for_in_range,
+    group_by,
 };
