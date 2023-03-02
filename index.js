@@ -85,7 +85,7 @@ function array_chunk(arr, chunk_size) {
     chunk_size = Math.abs(Math.round(chunk_size));
 
     if (chunk_size > length || [0, null, NaN].includes(chunk_size)) {
-        return arr;
+        return [arr];
     } else {
         let modified_array = [];
         for (let index = 0; index < length; index += chunk_size) {
