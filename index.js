@@ -24,7 +24,7 @@ function is_array(arr) {
  * @returns bool | TypeError
  */
 function is_num_array(arr) {
-    var a = arr.reduce(function(result, val) {
+    var a = arr.reduce(function (result, val) {
         return result && typeof val === "number";
     }, true);
     if (a == false) {
@@ -220,11 +220,11 @@ function sort_nums(arr, reverse = false) {
     is_array(arr);
     is_num_array(arr);
     if (reverse) {
-        return arr.sort(function(a, b) {
+        return arr.sort(function (a, b) {
             return b - a;
         });
     } else {
-        return arr.sort(function(a, b) {
+        return arr.sort(function (a, b) {
             return a - b;
         });
     }
@@ -506,7 +506,7 @@ function for_in_range(num, callback) {
  */
 function group_by(arr, key) {
     is_array(arr);
-    return arr.reduce(function(rv, x) {
+    return arr.reduce(function (rv, x) {
         (rv[x[key]] = rv[x[key]] || []).push(x);
         return rv;
     }, {});
@@ -555,5 +555,5 @@ export {
     find_and_update,
     for_in_range,
     group_by,
-    random_value
+    random_value,
 };
